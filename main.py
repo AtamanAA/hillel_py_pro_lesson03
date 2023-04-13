@@ -4,6 +4,7 @@ from flask import request
 from faker import Faker
 import statistics
 import csv
+import requests
 
 
 app = Flask(__name__)
@@ -29,8 +30,8 @@ def users_generate():
         count = 100
 
     fake_users = []
+    fake = Faker()
     for number in range(count):
-        fake = Faker()
         name = fake.name()
         email = fake.email()
         fake_users.append({"id": number + 1, "name": name, "email": email})
@@ -61,6 +62,16 @@ def mean():
                            mean_height_cm=mean_height_cm,
                            mean_weight_kg=mean_weight_kg,
                            count_people=count_people)
+
+
+@app.route("/space")
+def space():
+    r = requests.get('http://api.open-notify.org/astros.json')
+    astro_data = r.json()
+    astronauts_count = astro_data["number"]
+    astronauts = astro_data["people"]
+
+    return render_template('space.html', astronauts_count=astronauts_count, astronauts=astronauts)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Space</title>
+</head>
+<body>
+    <div>
+        <h1>People in space</h1>
+        <p>Number of astronauts in orbit: {{ astronauts_count }} </p>
+
+        <table>
+            <tr>
+                <th>Craft</th>
+                <th>Name</th>
+            </tr>
+            {% for astro in astronauts %}
+            <tr>
+                <td>{{ astro.craft }}</td>
+                <td>{{ astro.name }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+</body>
+</html>
