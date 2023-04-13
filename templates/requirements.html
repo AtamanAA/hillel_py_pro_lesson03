@@ -5,10 +5,12 @@
     <title>Requirements</title>
 </head>
 <body>
-    <p> Requirements: </p>
-    {% for line in requirements_list %}
-        <p>{{ line }}</p>
-    {% endfor %}
-
+    <div style="margin: 32px">
+        <h1> Requirements </h1>
+        {% for line in requirements_list %}
+            <p>{{ line }}</p>
+        {% endfor %}
+        <p><a href="/">Back to home</a></p>
+    </div>
 </body>
 </html>

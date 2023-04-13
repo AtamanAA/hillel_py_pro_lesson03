@@ -5,30 +5,29 @@
     <title>Users generate</title>
 </head>
 <body>
-    <h1>User generate</h1>
-    <form action="/users/generate" method="POST">
-        <p>
-            <label>Users count</label><input type="number" name="count" value="{{ count }}" required>
-            <input type="submit" value="Generate">
-        </p>
-
-    </form>
-    <div>
-        <table>
+    <div style="margin: 32px">
+        <h1>User generate</h1>
+        <form action="/users/generate" method="POST">
+            <p>
+                <label>Users count</label><input type="number" name="count" value="{{ count }}" required>
+                <input type="submit" value="Generate">
+            </p>
+        </form>
+        <table style="border: 2px solid black; border-collapse: collapse;">
             <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Email</th>
+                <th style="border: 1px solid black;">ID</th>
+                <th style="border: 1px solid black;">Name</th>
+                <th style="border: 1px solid black;">Email</th>
             </tr>
             {% for user in fake_users %}
             <tr>
-                <td>{{ user.id }}</td>
-                <td>{{ user.name }}</td>
-                <td>{{ user.email }}</td>
+                <td style="border: 1px solid black;">{{ user.id }}</td>
+                <td style="border: 1px solid black;">{{ user.name }}</td>
+                <td style="border: 1px solid black;">{{ user.email }}</td>
             </tr>
             {% endfor %}
         </table>
+        <p><a href="/">Back to home</a></p>
     </div>
-
 </body>
 </html>

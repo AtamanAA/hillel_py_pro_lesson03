@@ -5,23 +5,23 @@
     <title>Space</title>
 </head>
 <body>
-    <div>
+    <div style="margin: 32px">
         <h1>People in space</h1>
         <p>Number of astronauts in orbit: {{ astronauts_count }} </p>
 
-        <table>
+        <table style="border: 2px solid black; border-collapse: collapse;">
             <tr>
-                <th>Craft</th>
-                <th>Name</th>
+                <th style="border: 1px solid black;">Craft</th>
+                <th style="border: 1px solid black;">Name</th>
             </tr>
             {% for astro in astronauts %}
-            <tr>
-                <td>{{ astro.craft }}</td>
-                <td>{{ astro.name }}</td>
+            <tr style="border: 1px solid black;">
+                <td style="border: 1px solid black;">{{ astro.craft }}</td>
+                <td style="border: 1px solid black;">{{ astro.name }}</td>
             </tr>
             {% endfor %}
         </table>
-
+        <p><a href="/">Back to home</a></p>
     </div>
 </body>
 </html>
