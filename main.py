@@ -1,8 +1,9 @@
-from flask import Flask, render_template, request
-import statistics
 import csv
-from faker import Faker
+import statistics
+
 import requests
+from faker import Faker
+from flask import Flask, render_template, request
 
 
 app = Flask(__name__)
